@@ -8,7 +8,7 @@ import {useShowMode} from "../DarkMode"
 
 function Footer() {
 
-    const { isShowDark, toggleDarkMode } = useShowMode();
+    const { isShowDark } = useShowMode();
 
 
   return (
