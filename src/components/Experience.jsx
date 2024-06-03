@@ -1,8 +1,6 @@
 import React from 'react';
-import { FaCode } from "react-icons/fa6";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { FaLaptopCode } from "react-icons/fa6";
-import { TbWriting } from "react-icons/tb";
 import {useShowMode} from "../DarkMode";
 
 
