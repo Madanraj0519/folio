@@ -15,6 +15,8 @@ const Projects = () => {
                         <h3 className=" title relative w-max text-2xl font-extrabold">Visual</h3>
                         </a>
                         </div>
+
+
                         <div className="mt-10 scroll-m-[30px] ">
                             <section className={` justify-between  flex flex-col lg:flex-row relative gap-14 lg:gap-15  rounded-2xl overflow-hidden  p-5 lg:p-10 ${isShowDark ? "text-[#fff] shadow-[#fff] shadow-md" : "text-black shadow-2xl"} `}>
 
@@ -46,6 +48,36 @@ const Projects = () => {
                                 </div>
                             </section>
                         </div>
+
+
+                           
+                        <div className="mt-10 scroll-m-[30px] ">
+                            <section className={` justify-between  flex flex-col lg:flex-row relative gap-14 lg:gap-15  rounded-2xl overflow-hidden  p-5 lg:p-10 ${isShowDark ? "text-[#fff] shadow-[#fff] shadow-md" : "text-black shadow-2xl"} `}>
+
+                                <div className="w-full lg:w-[55%] relative flex flex-col  leading-[2rem]">
+                                    <h3 className="font-semibold text-xl lg:text-[25px]">Disney+ Clone</h3>
+                                    <p>The Movie with trailer</p>
+                                    <p className="mb-2 md:text-[17px] "> Developed a Disney+ clone using React.js and Redux for state management, closely mimicking the original user interface. Leveraged Firebase to implement Google user authentication. </p>
+                                    <div className="flex flex-wrap gap-2 w-full mt-2">
+                                        <p className={`border ${ isShowDark ? "border-[#fff] bg-[#ffffffa0] text-black" : "border-[#000] bg-[#2221] "} px-4 py-1 rounded-2xl text-sm `} >ReactJS</p>
+                                        <p className={`border ${ isShowDark ? "border-[#fff] bg-[#ffffffa0] text-black" : "border-[#000] bg-[#2221] "} px-4 py-1 rounded-2xl text-sm `} >TailwindCSS</p>
+                                        <p className={`border ${ isShowDark ? "border-[#fff] bg-[#ffffffa0] text-black" : "border-[#000] bg-[#2221] "} px-4 py-1 rounded-2xl text-sm `} >Redux</p>
+                                        <p className={`border ${ isShowDark ? "border-[#fff] bg-[#ffffffa0] text-black" : "border-[#000] bg-[#2221] "} px-4 py-1 rounded-2xl text-sm `} >Firebase</p>
+                                        <p className={`border ${ isShowDark ? "border-[#fff] bg-[#ffffffa0] text-black" : "border-[#000] bg-[#2221] "} px-4 py-1 rounded-2xl text-sm `} >TmdbAPI</p>
+                                    </div>
+                                    <div className="flex items-center gap-5 mt-4">
+                                       <a href="https://movie-streaming-app-frontend.vercel.app/"  rel='noreferrer' target={'_blank'} className="text-lg py-2 text-center bg-blue-500 rounded w-[180px] mt-2 
+                                       text-white font-semibold flex justify-center items-center gap-1">Explore Project <GoLinkExternal /> </a>
+                                       <a href="https://github.com/Madanraj0519/Disney-clone" rel='noreferrer' target={'_blank'} ><FaGithubSquare className="text-5xl mt-1" /></a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img className="rounded  object-contain bg-contain w-full lg:w-[600px] h-[px] lg:h-[px] " src="Disney-clone.png" alt="" />
+                                </div>
+                            </section>
+                        </div>
+
+
                         <div className="mt-10 scroll-m-[30px] ">
                             <section className={` justify-between  flex flex-col lg:flex-row relative gap-14 lg:gap-15  rounded-2xl overflow-hidden  p-5 lg:p-10 ${isShowDark ? "text-[#fff] shadow-[#fff] shadow-md" : "text-black shadow-2xl"} `}>
 
@@ -72,6 +104,8 @@ const Projects = () => {
                                 </div>
                             </section>
                         </div>
+
+
                         <div className="mt-10 scroll-m-[30px] ">
                             <section className={` justify-between  flex flex-col lg:flex-row relative gap-14 lg:gap-15  rounded-2xl overflow-hidden  p-5 lg:p-10 ${isShowDark ? "text-[#fff] shadow-[#fff] shadow-md" : "text-black shadow-2xl"} `}>
 
@@ -98,31 +132,7 @@ const Projects = () => {
                                 </div>
                             </section>
                         </div>
-                        <div className="mt-10 scroll-m-[30px] ">
-                            <section className={` justify-between  flex flex-col lg:flex-row relative gap-14 lg:gap-15  rounded-2xl overflow-hidden  p-5 lg:p-10 ${isShowDark ? "text-[#fff] shadow-[#fff] shadow-md" : "text-black shadow-2xl"} `}>
 
-                                <div className="w-full lg:w-[55%] relative flex flex-col  leading-[2rem]">
-                                    <h3 className="font-semibold text-xl lg:text-[25px]">Disney+ Clone</h3>
-                                    <p>The Movie with trailer</p>
-                                    <p className="mb-2 md:text-[17px] "> Developed a Disney+ clone using React.js and Redux for state management, closely mimicking the original user interface. Leveraged Firebase to implement Google user authentication. </p>
-                                    <div className="flex flex-wrap gap-2 w-full mt-2">
-                                        <p className={`border ${ isShowDark ? "border-[#fff] bg-[#ffffffa0] text-black" : "border-[#000] bg-[#2221] "} px-4 py-1 rounded-2xl text-sm `} >ReactJS</p>
-                                        <p className={`border ${ isShowDark ? "border-[#fff] bg-[#ffffffa0] text-black" : "border-[#000] bg-[#2221] "} px-4 py-1 rounded-2xl text-sm `} >TailwindCSS</p>
-                                        <p className={`border ${ isShowDark ? "border-[#fff] bg-[#ffffffa0] text-black" : "border-[#000] bg-[#2221] "} px-4 py-1 rounded-2xl text-sm `} >Redux</p>
-                                        <p className={`border ${ isShowDark ? "border-[#fff] bg-[#ffffffa0] text-black" : "border-[#000] bg-[#2221] "} px-4 py-1 rounded-2xl text-sm `} >Firebase</p>
-                                        <p className={`border ${ isShowDark ? "border-[#fff] bg-[#ffffffa0] text-black" : "border-[#000] bg-[#2221] "} px-4 py-1 rounded-2xl text-sm `} >TmdbAPI</p>
-                                    </div>
-                                    <div className="flex items-center gap-5 mt-4">
-                                       <a href="https://disney-clone-aaf1.vercel.app/"  rel='noreferrer' target={'_blank'} className="text-lg py-2 text-center bg-blue-500 rounded w-[180px] mt-2 
-                                       text-white font-semibold flex justify-center items-center gap-1">Explore Project <GoLinkExternal /> </a>
-                                       <a href="https://github.com/Madanraj0519/Disney-clone" rel='noreferrer' target={'_blank'} ><FaGithubSquare className="text-5xl mt-1" /></a>
-                                    </div>
-                                </div>
-                                <div>
-                                    <img className="rounded  object-contain bg-contain w-full lg:w-[600px] h-[px] lg:h-[px] " src="Disney-clone.png" alt="" />
-                                </div>
-                            </section>
-                        </div>
                         <div className="mt-10 scroll-m-[30px] ">
                             <section className={` justify-between  flex flex-col lg:flex-row relative gap-14 lg:gap-15  rounded-2xl overflow-hidden  p-5 lg:p-10 ${isShowDark ? "text-[#fff] shadow-[#fff] shadow-md" : "text-black shadow-2xl"} `}>
 
