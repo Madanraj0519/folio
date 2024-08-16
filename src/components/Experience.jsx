@@ -2,16 +2,30 @@ import React from 'react';
 import { MdOutlineDesignServices } from "react-icons/md";
 import { FaLaptopCode } from "react-icons/fa6";
 import {useShowMode} from "../DarkMode";
+import { motion } from 'framer-motion';
 
 
 const Experience = () => {
     const { isShowDark } = useShowMode();
   return (
     <section id='Experience' className="mb-10 mt-28">
-    <h2 className={`title w-max px-2 mt-8 mb-3 font-semibold relative text-4xl ${isShowDark ? "text-[#fff]" : "text-black"}`}>My Experience</h2>
+    <motion.h2 
+    whileInView={{opacity: 1, y: 0}}
+    initial={{ opacity: 0, y: -100 }}
+    transition={{ duration: 1 }} className={`title w-max px-2 mt-8 mb-3 font-semibold relative text-4xl ${isShowDark ? "text-[#fff]" : "text-black"}`}>My Experience</motion.h2>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-5">
-    <div className=" bg-[rgba(169,169,169,0.8)] flex gap-4 rounded-md p-4 py-6">
-         <div className="bg-blue-500 h-[55px] rounded-md p-3 flex items-center justify-center"> <i className="text-4xl text-white"><FaLaptopCode /></i> </div>
+
+    <motion.div
+    whileInView={{opacity: 1, x: 0}}
+    initial={{ opacity: 0, x: -100 }}
+    transition={{ duration: 1 }}
+     className=" bg-[rgba(169,169,169,0.8)] flex gap-4 rounded-md p-4 py-6">
+
+         <motion.div
+         whileInView={{opacity: 1, x: 0}}
+         initial={{ opacity: 0, x: 100 }}
+         transition={{ duration: 1 }}
+         className="bg-blue-500 h-[55px] rounded-md p-3 flex items-center justify-center"> <i className="text-4xl text-white"><FaLaptopCode /></i> </motion.div>
             <div>
                 <h2 className="text-xl font-semibold mb-1">Teenofes Tech Solutions Pvt. Ltd</h2>
                 <span className=''>(Front-end Developer)</span>
@@ -23,9 +37,18 @@ const Experience = () => {
                         animations, under real-world project constraints.</li>
                 </ul>
             </div>
-        </div>
-        <div className=" bg-[rgba(169,169,169,0.8)] flex gap-4 rounded-md p-4 py-6">
-            <div className="bg-blue-500 h-[55px] rounded-md p-3 flex items-center justify-center"> <i className="text-4xl text-white"><MdOutlineDesignServices /></i> </div>
+        </motion.div>
+
+        <motion.div
+        whileInView={{opacity: 1, x: 0}}
+        initial={{ opacity: 0, x: 100 }}
+        transition={{ duration: 1 }}
+         className=" bg-[rgba(169,169,169,0.8)] flex gap-4 rounded-md p-4 py-6">
+            <motion.div
+            whileInView={{opacity: 1, x: 0}}
+            initial={{ opacity: 0, x: 100 }}
+            transition={{ duration: 1 }}
+             className="bg-blue-500 h-[55px] rounded-md p-3 flex items-center justify-center"> <i className="text-4xl text-white"><MdOutlineDesignServices /></i> </motion.div>
             <div>
                 <h2 className="text-xl font-semibold mb-1">Open Source Contributor and Freelancer</h2>
                 <span className=''>(Front-end Developer)</span>
@@ -38,7 +61,8 @@ const Experience = () => {
                           Freehit, ProjectsHut, and many other projects.</li>
                 </ul>
             </div>
-        </div>
+        </motion.div>
+
         </div>
     </section>
   )

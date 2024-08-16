@@ -2,22 +2,33 @@ import React from 'react';
 import { GoLinkExternal } from "react-icons/go";
 import { FaGithubSquare } from "react-icons/fa";
 import {useShowMode} from "../DarkMode";
+import { motion } from 'framer-motion';
+
 
 const Projects = () => {
     const { isShowDark } = useShowMode();
+
   return (
     <section id="Project" className=" py-10 pb-20 snap-y scroll-mt-[6rem] ">
                         <div className=" flex justify-between">
-                        <h2 className={`title relative w-max px-2 mb-3 font-semibold text-4xl ${isShowDark ? "text-[#fff]" : "text-black"}`}>
+                        <motion.h2
+                        whileInView={{opacity: 1, y: 0}}
+                        initial={{ opacity: 0, y: -100 }}
+                        transition={{ duration: 1 }}
+                         className={`title relative w-max px-2 mb-3 font-semibold text-4xl ${isShowDark ? "text-[#fff]" : "text-black"}`}>
                             Projects
-                        </h2>
+                        </motion.h2>
                         <a href="/#Project" className="text-blue-500 hover:text-pink-700">
                         <h3 className=" title relative w-max text-2xl font-extrabold">Visual</h3>
                         </a>
                         </div>
 
 
-                        <div className="mt-10 scroll-m-[30px] ">
+                        <motion.div
+                        whileInView={{opacity: 1, x: 0}}
+                        initial={{ opacity: 0, x: 100 }}
+                        transition={{ duration: 1 }}
+                         className="mt-10 scroll-m-[30px] ">
                             <section className={` justify-between  flex flex-col lg:flex-row relative gap-14 lg:gap-15  rounded-2xl overflow-hidden  p-5 lg:p-10 ${isShowDark ? "text-[#fff] shadow-[#fff] shadow-md" : "text-black shadow-2xl"} `}>
 
                                 <div className="w-full lg:w-[55%] relative flex flex-col  leading-[2rem]">
@@ -47,11 +58,15 @@ const Projects = () => {
                                     <img className="rounded opacity-90 object-contain bg-contain w-full lg:w-[600px] h-[px] lg:h-[px] " src="underdogs.png" alt="" />
                                 </div>
                             </section>
-                        </div>
+                        </motion.div>
 
 
                            
-                        <div className="mt-10 scroll-m-[30px] ">
+                        <motion.div
+                        whileInView={{opacity: 1, x: 0}}
+                        initial={{ opacity: 0, x: 100 }}
+                        transition={{ duration: 1 }}
+                         className="mt-10 scroll-m-[30px] ">
                             <section className={` justify-between  flex flex-col lg:flex-row relative gap-14 lg:gap-15  rounded-2xl overflow-hidden  p-5 lg:p-10 ${isShowDark ? "text-[#fff] shadow-[#fff] shadow-md" : "text-black shadow-2xl"} `}>
 
                                 <div className="w-full lg:w-[55%] relative flex flex-col  leading-[2rem]">
@@ -75,10 +90,13 @@ const Projects = () => {
                                     <img className="rounded  object-contain bg-contain w-full lg:w-[600px] h-[px] lg:h-[px] " src="Disney-clone.png" alt="" />
                                 </div>
                             </section>
-                        </div>
+                        </motion.div>
 
 
-                        <div className="mt-10 scroll-m-[30px] ">
+                        <motion.div 
+                        whileInView={{opacity: 1, x: 0}}
+                        initial={{ opacity: 0, x: 100 }}
+                        transition={{ duration: 1 }} className="mt-10 scroll-m-[30px] ">
                             <section className={` justify-between  flex flex-col lg:flex-row relative gap-14 lg:gap-15  rounded-2xl overflow-hidden  p-5 lg:p-10 ${isShowDark ? "text-[#fff] shadow-[#fff] shadow-md" : "text-black shadow-2xl"} `}>
 
                                 <div className="w-full lg:w-[55%] relative flex flex-col  leading-[2rem]">
@@ -103,10 +121,13 @@ const Projects = () => {
                                     <img className="rounded object-contain bg-contain w-full lg:w-[600px] h-[px] lg:h-[px] opacity-90 " src="Zendesk.png" alt="" />
                                 </div>
                             </section>
-                        </div>
+                        </motion.div>
 
 
-                        <div className="mt-10 scroll-m-[30px] ">
+                        <motion.div 
+                        whileInView={{opacity: 1, x: 0}}
+                        initial={{ opacity: 0, x: 100 }}
+                        transition={{ duration: 1 }} className="mt-10 scroll-m-[30px] ">
                             <section className={` justify-between  flex flex-col lg:flex-row relative gap-14 lg:gap-15  rounded-2xl overflow-hidden  p-5 lg:p-10 ${isShowDark ? "text-[#fff] shadow-[#fff] shadow-md" : "text-black shadow-2xl"} `}>
 
                                 <div className="w-full lg:w-[55%] relative flex flex-col  leading-[2rem]">
@@ -131,9 +152,12 @@ const Projects = () => {
                                     <img className="rounded  object-contain bg-contain w-full lg:w-[600px] h-[px] lg:h-[px] " src="Note-app.png" alt="" />
                                 </div>
                             </section>
-                        </div>
+                        </motion.div>
 
-                        <div className="mt-10 scroll-m-[30px] ">
+                        <motion.div 
+                        whileInView={{opacity: 1, x: 0}}
+                        initial={{ opacity: 0, x: 100 }}
+                        transition={{ duration: 1 }} className="mt-10 scroll-m-[30px] ">
                             <section className={` justify-between  flex flex-col lg:flex-row relative gap-14 lg:gap-15  rounded-2xl overflow-hidden  p-5 lg:p-10 ${isShowDark ? "text-[#fff] shadow-[#fff] shadow-md" : "text-black shadow-2xl"} `}>
 
                                 <div className="w-full lg:w-[55%] relative flex flex-col  leading-[2rem]">
@@ -158,8 +182,13 @@ const Projects = () => {
                                     <img className="rounded object-cntain bg-contain w-full lg:w-[600px] h-[px] lg:h-[px] " src="piechips.png" alt="" />
                                 </div>
                             </section>
-                        </div>
-                        <div className="mt-10 scroll-m-[30px] ">
+                        </motion.div>
+
+                        <motion.div 
+                        whileInView={{opacity: 1, x: 0}}
+                        initial={{ opacity: 0, x: 100 }}
+                        transition={{ duration: 1 }} 
+                        className="mt-10 scroll-m-[30px] ">
                             <section className={` justify-between  flex flex-col lg:flex-row relative gap-14 lg:gap-15  rounded-2xl overflow-hidden  p-5 lg:p-10 ${isShowDark ? "text-[#fff] shadow-[#fff] shadow-md" : "text-black shadow-2xl"} `}>
                                 <div className="w-full lg:w-[55%] relative flex flex-col  leading-[2rem]">
                                     <h3 className="font-semibold text-xl lg:text-[25px]">Portfolio Site</h3>
@@ -179,8 +208,14 @@ const Projects = () => {
                                     <img className="rounded  object-contain bg-contain w-full lg:w-[600px] h-[px] lg:h-[px] " src="Port-folio.png" alt="" />
                                 </div>
                             </section>
-                        </div>
-                        <div className="mt-10 scroll-m-[30px] ">
+                        </motion.div>
+
+
+                        <motion.div 
+                        whileInView={{opacity: 1, x: 0}}
+                        initial={{ opacity: 0, x: 100 }}
+                        transition={{ duration: 1 }}
+                         className="mt-10 scroll-m-[30px] ">
                             <section className={` justify-between  flex flex-col lg:flex-row relative gap-14 lg:gap-15  rounded-2xl overflow-hidden  p-5 lg:p-10 ${isShowDark ? "text-[#fff] shadow-[#fff] shadow-md" : "text-black shadow-2xl"} `}>
 
                                 <div className="w-full lg:w-[55%] relative flex flex-col  leading-[2rem]">
@@ -202,7 +237,9 @@ const Projects = () => {
                                     <img className="rounded  object-contain bg-contain w-full lg:w-[600px] h-[px] lg:h-[px] " src="e-commerce.png" alt="" />
                                 </div>
                             </section>
-                        </div>
+                        </motion.div>
+
+
                         {/* <div className="mt-10 scroll-m-[30px] ">
                             <section className=" justify-between  flex flex-col lg:flex-row relative gap-14 lg:gap-15  rounded-2xl overflow-hidden shadow-2xl p-5 lg:p-10 ">
                                 <div className="w-full lg:w-[55%] relative flex flex-col  leading-[2rem]">
