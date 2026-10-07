@@ -1,87 +1,48 @@
-import React from 'react';
-import HTML from "../assests/Images/HTML.webp";
-import CSS from "../assests/Images/CSS.png";
-import BootStrap from "../assests/Images/Bootstrap.png";
-import Tailwind from "../assests/Images/Tailwind.webp";
-import ReactJS from "../assests/Images/react.png";
-import GIT from "../assests/Images/git.png";
-import GITHUB from "../assests/Images/github.png";
-import Redux from "../assests/Images/redux-icon.webp";
-import Firebase from "../assests/Images/firebase.webp";
-import JS from "../assests/Images/javascript.png";
-import Express from "../assests/Images/express.png";
-import Node from "../assests/Images/nodejs.webp";
-import MongoDB from "../assests/Images/mongodb.png";
-import {useShowMode} from "../DarkMode";
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
+
+const skillGroups = [
+  { title: "Languages", skills: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3"] },
+  { title: "Frontend", skills: ["React.js", "React Router", "Redux Toolkit", "Tailwind CSS", "Responsive design"] },
+  { title: "Backend", skills: ["Node.js", "Express.js", "Spring Boot", "REST APIs", "JWT"] },
+  { title: "Databases", skills: ["PostgreSQL", "MongoDB"] },
+  { title: "State & integration", skills: ["Redux Toolkit", "Context API", "Axios", "API integration"] },
+  { title: "Testing", skills: ["Jest", "Supertest"] },
+  { title: "Tools", skills: ["Git", "Docker", "Redis", "Swagger / OpenAPI", "Postman"] },
+  { title: "Core concepts", skills: ["Layered architecture", "Design patterns", "Data structures & algorithms", "API performance", "Authentication & authorization", "Microservices fundamentals"] },
+];
 
 const TechStack = () => {
-    const { isShowDark } = useShowMode();
-  return (
-    <section className=" w-full mb-20 py-10 snap-y scroll-mt-[7.5rem] ">
-    <motion.h2 whileInView={{opacity: 1, y: 0}}
-                          initial={{ opacity: 0, y: -100 }}
-                          transition={{ duration: 1 }} className={`title relative w-max px-2 mb-3 font-semibold text-4xl ${isShowDark ? "text-[#fff]" : "text-black"}`}>Tech Stack</motion.h2>
-    <motion.section
-    whileInView={{opacity: 1, x: 0}}
-    initial={{ opacity: 0, x: 100 }}
-    transition={{ duration: 1 }} className={`grid grid-cols-2 place-items-center md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 text-xl mt-10 ${isShowDark ? "text-[#fff]" : "text-black"}`}>
-        <div
-         className={`px-2 py-2 flex items-center w-[170px] rounded-[9999px] justify-center ${ isShowDark ? "shadow-md shadow-[#ffffff86]" : "shadow-lg shadow-gray-300"} `}>
-            <p className="px-2">HTML5</p>
-            <img src={HTML} alt='' width='28px' height='28px' loading='lazy' />
-        </div>
-        <div className={`px-2 py-2 flex items-center w-[170px] rounded-[9999px] justify-center ${ isShowDark ? "shadow-md shadow-[#ffffff86]" : "shadow-lg shadow-gray-300"} `}>
-            <p className="px-2">CSS</p>
-            <img src={CSS}  alt=''  width='30px' height='30px' />
-        </div>
-        <div className={`px-2 py-2 flex items-center w-[170px] rounded-[9999px] justify-center ${ isShowDark ? "shadow-md shadow-[#ffffff86]" : "shadow-lg shadow-gray-300"} `}>
-            <p className="px-2">Javascript</p>
-            <img src={JS} alt=''  width='48px' height='48px' />
-        </div>
-        <div className={`px-2 py-2 flex items-center w-[170px] rounded-[9999px] justify-center ${ isShowDark ? "shadow-md shadow-[#ffffff86]" : "shadow-lg shadow-gray-300"} `}>
-            <p className="px-2">BootStrap</p>
-            <img src={BootStrap} alt=''  width='30px' height='30px' />
-        </div>
-        <div className={`px-2 py-2 flex items-center w-[170px] rounded-[9999px] justify-center ${ isShowDark ? "shadow-md shadow-[#ffffff86]" : "shadow-lg shadow-gray-300"} `}>
-            <p className="px-2">TailwindCSS</p>
-            <img src={Tailwind} alt=''  width='30px' height='30px' />
-        </div>
-        <div className={`px-2 py-2 flex items-center w-[170px] rounded-[9999px] justify-center ${ isShowDark ? "shadow-md shadow-[#ffffff86]" : "shadow-lg shadow-gray-300"} `}>
-            <p className="px-2">RectJS</p>
-            <img src={ReactJS} alt=''  width='36px' height='36px' />
-        </div>
-        <div className={`px-2 py-2 flex items-center w-[170px] rounded-[9999px] justify-center ${ isShowDark ? "shadow-md shadow-[#ffffff86]" : "shadow-lg shadow-gray-300"} `}>
-            <p className="px-2">Git</p>
-            <img src={GIT} alt=''  width='36px' height='36px' />
-        </div>
-        <div className={`px-2 py-2 flex items-center w-[170px] rounded-[9999px] justify-center ${ isShowDark ? "shadow-md shadow-[#ffffff86]" : "shadow-lg shadow-gray-300"} `}>
-            <p className="px-2">GitHub</p>
-            <img src={GITHUB} alt=''  width='40px' height='40px' />
-        </div>
-        <div className={`px-2 py-2 flex items-center w-[170px] rounded-[9999px] justify-center ${ isShowDark ? "shadow-md shadow-[#ffffff86]" : "shadow-lg shadow-gray-300"} `}>
-            <p className="px-2">Redux</p>
-            <img src={Redux}  alt='' width='40px' height='40px' />
-        </div>
-        <div className={`px-2 py-2 flex items-center w-[170px] rounded-[9999px] justify-center ${ isShowDark ? "shadow-md shadow-[#ffffff86]" : "shadow-lg shadow-gray-300"} `}>
-            <p className="px-2">Firebase</p>
-            <img src={Firebase} alt=''  width='44px' height='44px' />
-        </div>
-        <div className={`px-2 py-2 flex items-center w-[170px] rounded-[9999px] justify-center ${ isShowDark ? "shadow-md shadow-[#ffffff86]" : "shadow-lg shadow-gray-300"} `}>
-            <p className="px-2">NodeJS</p>
-            <img src={Node} alt=''  width='40px' height='40px' />
-        </div>
-        <div className={`px-2 py-2 flex items-center w-[170px] rounded-[9999px] justify-center ${ isShowDark ? "shadow-md shadow-[#ffffff86]" : "shadow-lg shadow-gray-300"} `}>
-            <p className="px-2">Express</p>
-            <img src={Express} alt=''  width='48px' height='48px' />
-        </div>
-        <div className={`px-2 py-2 flex items-center w-[170px] rounded-[9999px] justify-center ${ isShowDark ? "shadow-md shadow-[#ffffff86]" : "shadow-lg shadow-gray-300"} `}>
-            <p className="px-2">MangoDb</p>
-            <img src={MongoDB} alt=''  width='36px' height='36px' />
-        </div>
-    </motion.section>
-</section>
-  )
-}
+  const reduceMotion = useReducedMotion();
 
-export default TechStack
+  return (
+    <section id="Skills" className="site-section skills-section" aria-labelledby="skills-title">
+      <div className="section-heading">
+        <p className="eyebrow">Tools of the trade</p>
+        <h2 id="skills-title">Technical skills</h2>
+        <p className="section-description">
+          Technologies and engineering practices from my professional experience and projects.
+        </p>
+      </div>
+      <div className="skill-groups">
+        {skillGroups.map((group, index) => (
+          <motion.article
+            className="skill-card"
+            key={group.title}
+            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.4, delay: reduceMotion ? 0 : index * 0.035 }}
+          >
+            <h3>{group.title}</h3>
+            <ul className="skill-list">
+              {group.skills.map((skill) => <li key={skill}>{skill}</li>)}
+            </ul>
+          </motion.article>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default TechStack;

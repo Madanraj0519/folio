@@ -1,77 +1,64 @@
-import React from 'react';
-import {TypeAnimation} from "react-type-animation";
-import {useShowMode} from "../DarkMode";
-import {motion} from "framer-motion";
+import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { FaArrowDown, FaArrowUpRightFromSquare, FaEnvelope, FaLocationDot } from "react-icons/fa6";
 
 const Hero = () => {
-    const { isShowDark } = useShowMode();
-
-    const containerX = (delay, value) => ({
-      hidden: { x: value, opacity: 0},
-      visible:{
-        x:0,
-        opacity: 1,
-        transition: { duration: 0.5, delay: delay},
-      },
-    })
+  const reduceMotion = useReducedMotion();
 
   return (
-    <section id='Hero' className="overflow-hidden lg:h-[100vh] flex flex-col lg:flex-row gap-4 mb-20 py-10 justify-evenly items-center ">
-                        <div className="">
-                            <motion.div 
-                              variants={containerX(0, -100)}
-                              initial="hidden"
-                              animate="visible"
-                              className="pb-14 text-6xl font-thin tracking-wider lg:mt-16 lg:text-7xl">
-                                <img src="Madanraj-pic.jpg" alt="" className="p-6 sm:w-[30rem] overflow-x-hidden rounded-full " />
-                              </motion.div>
-                        </div>
-                        <section className="w-full lg:w-[650px] flex flex-col gap-3 ">
-                            <TypeAnimation
-                                data-aos="fade-up"
-                                sequence={[
-                                  "MERN Stack Developer",
-                                  2500,
-                                  "Front End Developer",
-                                  2500,
-                                  "Freelancer",
-                                  2500,
-                                  ""
-                                ]}
-                                speed={30}
-                                wrapper="h2"
-                                repeat={Infinity}
-                                className="text-[rgba(169,169,169,0.8)] text-4xl font-bold sm:text-3xl"
-                            />
-                            {/* <p className="font-semibold text-lg lg:text-xl opacity-60 ">Frontend Developer | MERN Stack Developer | Freelancer </p> */}
-                            <motion.h3
-                            variants={containerX(0, 100)}
-                            initial="hidden"
-                            animate="visible" className="text-blue-500 text-4xl lg:text-5xl font-bold tracking-wider">
-                              Madanraj
-                            </motion.h3>
-                            <motion.h3 
-                            variants={containerX(0.5, 100)}
-                            initial="hidden"
-                            animate="visible"
-                            className={`md:text-xl text-[18px] font-medium ${ isShowDark ? "text-[#fff]" : "text-black"}`}>
-                            As a dedicated MERN Stack developer. I specialize in creating websites and web applications, combining technical expertise with an aptitude for design. My proficiency extends to crafting user-friendly interfaces and ensuring seamless functionality.I have a sharp eye for detail and am dedicated to turning your web vision into reality.With a passion for innovation, I leverage my front-end skills to transform ideas into impactful digital
-                            experiences. I thrive in collaborative environments and continuously seek opportunities to enhance my skills.</motion.h3>
-                            <div className=""></div>
-                            <div className="flex gap-4 text-[16px] md:text-xl">
-                             <motion.a 
-                               variants={containerX(1, 100)}
-                               initial="hidden"
-                               animate="visible" href="https://drive.google.com/file/d/11vmrahc6crY1G1MUOuHm0mxo-H5kHGXN/view?usp=sharing" rel='noreferrer' target={'_blank'} className={`border border-blue-500 py-2 px-3 ${ isShowDark ? "text-[#fff]" : "text-black"}`}> Download CV</motion.a>
-                             <motion.a 
-                             variants={containerX(1.5, 100)}
-                             initial="hidden"
-                             animate="visible"
-                             href="mailto:madanraj0519@gmail.com" rel='noreferrer' target={'_blank'} className=" bg-[rgba(169,169,169,0.8)] py-[10px] px-6 hero-link" >Get In Touch</motion.a>
-                            </div>
-                        </section>
-                    </section>
-  )
-}
+    <section id="Hero" className="hero-section" aria-labelledby="hero-title">
+      <motion.div
+        className="hero-copy"
+        initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.65 }}
+      >
+        <p className="eyebrow"><span className="eyebrow-dot" /> Software Engineer · MERN Stack</p>
+        <h1 id="hero-title">
+          Building reliable software, <span>one thoughtful experience at a time.</span>
+        </h1>
+        <p className="hero-summary">
+          I&apos;m Madanraj P, a software engineer who builds full-stack web applications with
+          React, TypeScript, Node.js, and MongoDB. I care about clean architecture, useful
+          product experiences, and software that is easy to maintain.
+        </p>
 
-export default Hero
+        <div className="hero-actions">
+          <a className="button button--primary" href="/Madanraj_P_CV.pdf" download="Madanraj-P-CV.pdf">
+            Download CV <FaArrowDown aria-hidden="true" />
+          </a>
+          <a className="button button--outline" href="/#Project">
+            Explore my work <FaArrowUpRightFromSquare aria-hidden="true" />
+          </a>
+        </div>
+
+        <div className="hero-contact">
+          <a href="mailto:madanraj0519@gmail.com">
+            <FaEnvelope aria-hidden="true" /> madanraj0519@gmail.com
+          </a>
+          <span><FaLocationDot aria-hidden="true" /> Chennai, India</span>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="hero-portrait-wrap"
+        initial={reduceMotion ? false : { opacity: 0, scale: 0.96 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.7, delay: 0.12 }}
+      >
+        <div className="portrait-grid" aria-hidden="true" />
+        <div className="hero-portrait">
+          <img src="/Madanraj_Profile (1).png" alt="Portrait of Madanraj P" />
+        </div>
+        <div className="portrait-note">
+          <span className="portrait-note__icon" aria-hidden="true">{"</>"}</span>
+          <span><strong>Full-stack developer</strong><small>From interface to API</small></span>
+        </div>
+        <span className="portrait-orbit portrait-orbit--one" aria-hidden="true" />
+        <span className="portrait-orbit portrait-orbit--two" aria-hidden="true" />
+      </motion.div>
+    </section>
+  );
+};
+
+export default Hero;
