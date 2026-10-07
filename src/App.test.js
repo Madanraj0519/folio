@@ -4,7 +4,7 @@ import App from "./App";
 test("renders Madanraj's profile, selected work, and local CV download", () => {
   render(<App />);
 
-  expect(screen.getByRole("heading", { name: /building reliable software/i })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: /i build digital things that just work/i })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: /technical skills/i })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "Projects", exact: true })).toBeInTheDocument();
   expect(screen.getByRole("heading", { name: "Experience", exact: true })).toBeInTheDocument();

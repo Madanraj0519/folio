@@ -17,6 +17,20 @@ const HomePage = () => {
       <Header />
       <main className="page-content">
         <Hero />
+        <div className="tech-ribbon" aria-label="Technologies I work with">
+          <div className="tech-ribbon__track">
+            <span>React</span><i>✳</i><span>TypeScript</span><i>✳</i><span>Node.js</span><i>✳</i>
+            <span>MongoDB</span><i>✳</i><span>PostgreSQL</span><i>✳</i><span>REST APIs</span><i>✳</i>
+            <span>Redux Toolkit</span><i>✳</i>
+            <span aria-hidden="true">React</span><i aria-hidden="true">✳</i>
+            <span aria-hidden="true">TypeScript</span><i aria-hidden="true">✳</i>
+            <span aria-hidden="true">Node.js</span><i aria-hidden="true">✳</i>
+            <span aria-hidden="true">MongoDB</span><i aria-hidden="true">✳</i>
+            <span aria-hidden="true">PostgreSQL</span><i aria-hidden="true">✳</i>
+            <span aria-hidden="true">REST APIs</span><i aria-hidden="true">✳</i>
+            <span aria-hidden="true">Redux Toolkit</span><i aria-hidden="true">✳</i>
+          </div>
+        </div>
         <About />
         
         <Experience />

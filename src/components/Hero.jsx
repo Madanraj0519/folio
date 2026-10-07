@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { FaArrowDown, FaArrowUpRightFromSquare, FaEnvelope, FaLocationDot } from "react-icons/fa6";
+import { FaArrowDown, FaArrowUpRightFromSquare, FaEnvelope, FaStar } from "react-icons/fa6";
 
 const Hero = () => {
   const reduceMotion = useReducedMotion();
@@ -13,14 +13,15 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.65 }}
       >
-        <p className="eyebrow"><span className="eyebrow-dot" /> Software Engineer · MERN Stack</p>
+        <p className="eyebrow hero-eyebrow"><span className="eyebrow-dot" /> SOFTWARE ENGINEER · CHENNAI, INDIA</p>
         <h1 id="hero-title">
-          Building reliable software, <span>one thoughtful experience at a time.</span>
+          I build <span className="hero-highlight">digital</span>
+          <br className="hero-title-break" /> things that
+          <br /> <span className="hero-outline">just work.</span>
         </h1>
         <p className="hero-summary">
-          I&apos;m Madanraj P, a software engineer who builds full-stack web applications with
-          React, TypeScript, Node.js, and MongoDB. I care about clean architecture, useful
-          product experiences, and software that is easy to maintain.
+          Hey, I&apos;m <strong>Madanraj P.</strong> I turn complex ideas into thoughtful,
+          full-stack experiences — from the first line of interface to the last API request.
         </p>
 
         <div className="hero-actions">
@@ -32,12 +33,9 @@ const Hero = () => {
           </a>
         </div>
 
-        <div className="hero-contact">
-          <a href="mailto:madanraj0519@gmail.com">
-            <FaEnvelope aria-hidden="true" /> madanraj0519@gmail.com
-          </a>
-          <span><FaLocationDot aria-hidden="true" /> Chennai, India</span>
-        </div>
+        <a className="hero-email" href="mailto:madanraj0519@gmail.com">
+          <FaEnvelope aria-hidden="true" /> madanraj0519@gmail.com <span aria-hidden="true">↗</span>
+        </a>
       </motion.div>
 
       <motion.div
@@ -51,9 +49,10 @@ const Hero = () => {
           <img src="/Madanraj_Profile (1).png" alt="Portrait of Madanraj P" />
         </div>
         <div className="portrait-note">
-          <span className="portrait-note__icon" aria-hidden="true">{"</>"}</span>
-          <span><strong>Full-stack developer</strong><small>From interface to API</small></span>
+          <span className="portrait-note__icon" aria-hidden="true"><FaStar /></span>
+          <span><strong>Full-stack engineer</strong><small>Building for the real world</small></span>
         </div>
+        <div className="portrait-index"><span>01</span> / ENGINEERING</div>
         <span className="portrait-orbit portrait-orbit--one" aria-hidden="true" />
         <span className="portrait-orbit portrait-orbit--two" aria-hidden="true" />
       </motion.div>
