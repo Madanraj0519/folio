@@ -1,71 +1,71 @@
-import React from 'react';
-import { MdOutlineDesignServices } from "react-icons/md";
-import { FaLaptopCode } from "react-icons/fa6";
-import {useShowMode} from "../DarkMode";
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
+const roles = [
+  {
+    title: "Software Engineer · MERN Stack",
+    company: "Stratsyn.ai Pvt. Ltd.",
+    location: "Chennai",
+    dates: "Sep 2024 – Mar 2026",
+    highlights: [
+      "Developed scalable CRM applications for customer, lead, and contact management using React, TypeScript, Node.js, Express, and MongoDB.",
+      "Built and maintained RESTful APIs with CRUD operations, reusable services, request validation, and centralized error handling.",
+      "Created reusable React components, custom hooks, and API services using Redux Toolkit and Context API.",
+      "Integrated PostgreSQL and MongoDB for application data retrieval, processing, and business workflows.",
+      "Implemented caching for frequently accessed data and external API responses, and JWT authentication with access and refresh token flows.",
+      "Applied controller–service–repository architecture and collaborated with teammates on API integrations, debugging, and application features.",
+    ],
+  },
+  {
+    title: "Front-End Developer Intern",
+    company: "Teenofes",
+    location: "Chennai",
+    dates: "Mar 2022 – May 2022",
+    highlights: [],
+  },
+];
 
 const Experience = () => {
-    const { isShowDark } = useShowMode();
+  const reduceMotion = useReducedMotion();
+
   return (
-    <section id='Experience' className="mb-10 mt-28">
-    <motion.h2 
-    whileInView={{opacity: 1, y: 0}}
-    initial={{ opacity: 0, y: -100 }}
-    transition={{ duration: 1 }} className={`title w-max px-2 mt-8 mb-3 font-semibold relative text-4xl ${isShowDark ? "text-[#fff]" : "text-black"}`}>My Experience</motion.h2>
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-5">
+    <section id="Experience" className="site-section experience-section" aria-labelledby="experience-title">
+      <div className="section-heading">
+        <p className="eyebrow">Where I&apos;ve worked</p>
+        <h2 id="experience-title">Experience</h2>
+        <p className="section-description">
+          From early front-end work to building and maintaining full-stack business applications.
+        </p>
+      </div>
 
-    <motion.div
-    whileInView={{opacity: 1, x: 0}}
-    initial={{ opacity: 0, x: -100 }}
-    transition={{ duration: 1 }}
-     className=" bg-[rgba(169,169,169,0.8)] flex gap-4 rounded-md p-4 py-6">
-
-         <motion.div
-         whileInView={{opacity: 1, x: 0}}
-         initial={{ opacity: 0, x: 100 }}
-         transition={{ duration: 1 }}
-         className="bg-blue-500 h-[55px] rounded-md p-3 flex items-center justify-center"> <i className="text-4xl text-white"><FaLaptopCode /></i> </motion.div>
-            <div>
-                <h2 className="text-xl font-semibold mb-1">Teenofes Tech Solutions Pvt. Ltd</h2>
-                <span className=''>(Front-end Developer)</span>
-                <ul className="mt-2 gap-5 md:text-lg">
-                    <li>* Developed a responsive hospital website using HTML and CSS, ensuring optimal display on all devices. Implemented
-                        animations using JavaScript to enhance user interactivity and engagement.</li>
-                    <li>* Collaborated with a team of three members, leveraging their expertise to learn and apply new skills effectively.</li>
-                    <li>* Gained hands-on experience in web development best practices, including responsive design and JavaScript
-                        animations, under real-world project constraints.</li>
-                </ul>
+      <div className="experience-timeline">
+        {roles.map((role, index) => (
+          <motion.article
+            className="experience-card"
+            key={role.company}
+            initial={reduceMotion ? false : { opacity: 0, x: -14 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.18 }}
+            transition={{ duration: 0.45, delay: reduceMotion ? 0 : index * 0.08 }}
+          >
+            <div className="experience-card__marker" aria-hidden="true" />
+            <div className="experience-card__heading">
+              <div>
+                <h3>{role.title}</h3>
+                <p className="experience-company">{role.company} <span>·</span> {role.location}</p>
+              </div>
+              <span className="experience-dates">{role.dates}</span>
             </div>
-        </motion.div>
-
-        <motion.div
-        whileInView={{opacity: 1, x: 0}}
-        initial={{ opacity: 0, x: 100 }}
-        transition={{ duration: 1 }}
-         className=" bg-[rgba(169,169,169,0.8)] flex gap-4 rounded-md p-4 py-6">
-            <motion.div
-            whileInView={{opacity: 1, x: 0}}
-            initial={{ opacity: 0, x: 100 }}
-            transition={{ duration: 1 }}
-             className="bg-blue-500 h-[55px] rounded-md p-3 flex items-center justify-center"> <i className="text-4xl text-white"><MdOutlineDesignServices /></i> </motion.div>
-            <div>
-                <h2 className="text-xl font-semibold mb-1">Open Source Contributor and Freelancer</h2>
-                <span className=''>(Front-end Developer)</span>
-                <ul className="mt-2 gap-5 md:text-lg">
-                    <li>* Created an engaging and responsive landing page for the gym website. And developed an user experience and
-                          user-friendly admin dashboard for gym administrators.</li>
-                    <li>* Converted a Figma Design into a modern and responsive main page using React and Tailwind CSS, Demonstrated
-                          strong attention to detail, UI/UX design skills, and expertise in front-end development.</li>
-                    <li>* Added a signIn and SignUp page in the Blood Donation website project(React.js) and contributed to TigDog, Linkfree,
-                          Freehit, ProjectsHut, and many other projects.</li>
-                </ul>
-            </div>
-        </motion.div>
-
-        </div>
+            {role.highlights.length > 0 && (
+              <ul className="experience-highlights">
+                {role.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+              </ul>
+            )}
+          </motion.article>
+        ))}
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default Experience
+export default Experience;

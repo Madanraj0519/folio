@@ -1,47 +1,52 @@
-import React from 'react';
-import gif from "../assests/Images/animated-chock.gif";
-import {useShowMode} from "../DarkMode";
-import {motion} from "framer-motion";
+import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { FaGraduationCap } from "react-icons/fa6";
 
 const About = () => {
-    const { isShowDark } = useShowMode();
-
-    // const containerX = (delay, value) => ({
-    //   hidden: { x: value, opacity: 0},
-    //   visible:{
-    //     x:0,
-    //     opacity: 1,
-    //     transition: { duration: 0.5, delay: delay},
-    //   },
-    // })
+  const reduceMotion = useReducedMotion();
 
   return (
-    <section id="About" className=" w-full mb-20 py-10 snap-y scroll-mt-[6rem] ">
-                        <motion.h2 
-                         whileInView={{opacity: 1, y: 0}}
-                         initial={{ opacity: 0, y: -100 }}
-                         transition={{ duration: 1.5 }}
-                         className={`title relative w-max px-2 mb-3 font-semibold text-4xl ${isShowDark ? "text-[#fff]" : "text-black"}`}>About Me</motion.h2>
+    <motion.section
+      id="About"
+      className="site-section about-section"
+      aria-labelledby="about-title"
+      initial={reduceMotion ? false : { opacity: 0, y: 22 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.55 }}
+    >
+      <div className="section-heading">
+        <p className="eyebrow">A little about me</p>
+        <h2 id="about-title">Good software starts with understanding the problem.</h2>
+      </div>
+      <div className="about-grid">
+        <div className="about-copy">
+          <p>
+            I&apos;m a software engineer with professional experience building full-stack
+            applications and CRM workflows. My work spans responsive React interfaces,
+            reusable APIs, authentication, and data-backed features using PostgreSQL and MongoDB.
+          </p>
+          <p>
+            I enjoy turning requirements into maintainable software: choosing clear boundaries,
+            writing reusable components and services, and working with teammates to deliver
+            features that feel straightforward to use.
+          </p>
+          <a className="text-link" href="/#Experience">
+            A closer look at my experience <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <aside className="education-card" aria-label="Education">
+          <span className="education-card__icon"><FaGraduationCap aria-hidden="true" /></span>
+          <p className="eyebrow">Education</p>
+          <h3>B.E. in Computer Engineering</h3>
+          <p>Vels Institute of Science, Technology &amp; Advanced Studies</p>
+          <div className="education-card__meta">
+            <span>Chennai</span><span>May 2023</span><span>CGPA 7.42</span>
+          </div>
+        </aside>
+      </div>
+    </motion.section>
+  );
+};
 
-                        <div className='flex flex-col md:flex-row gap-10 justify-center items-center mt-10'>
-                          <motion.p 
-                          whileInView={{opacity: 1, x: 0}}
-                          initial={{ opacity: 0, x: -100 }}
-                          transition={{ duration: 1 }}
-                          className={`align-justify text-[18px] leading-[1.8em]  md:leading-[2em] md:text-xl ${isShowDark ? "text-[#fff]" : "text-black"} `}>
-                            I have a strong passion for technology and thrive on constantly learning new things. Every day, I make it a point to document my progress by creating and building new projects. My expertise lies in crafting visually appealing and user-friendly websites and web applications. I take pride in translating visions into web realities, paying attention to every pixel.
-                            <br /> <br/>
-                            As a frontend developer, I am dedicated to creating seamless and intuitive user experiences. Design is not just a task for me; it's a form of problem-solving that I enjoy immensely. I believe in simplicity but strive for perfection in every project I undertake. My journey in the tech industry is driven by a love for building innovative solutions and solving problems.
-                            <br /> <br/>
-                          </motion.p>
-
-                          <motion.img whileInView={{opacity: 1, x: 0}}
-                          initial={{ opacity: 0, x: 100 }}
-                          transition={{ duration: 1 }} className='w-72 h-72 md:h-96' src={gif} alt='gif' />
-
-                        </div>
-    </section>
-  )
-}
-
-export default About
+export default About;
