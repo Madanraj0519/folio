@@ -1,6 +1,4 @@
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
-
 const roles = [
   {
     title: "Software Engineer · MERN Stack",
@@ -26,12 +24,10 @@ const roles = [
 ];
 
 const Experience = () => {
-  const reduceMotion = useReducedMotion();
-
   return (
     <section id="Experience" className="site-section experience-section" aria-labelledby="experience-title">
       <div className="section-heading">
-        <p className="eyebrow">Where I&apos;ve worked</p>
+        <p className="eyebrow">Work history</p>
         <h2 id="experience-title">Experience</h2>
         <p className="section-description">
           From early front-end work to building and maintaining full-stack business applications.
@@ -39,14 +35,10 @@ const Experience = () => {
       </div>
 
       <div className="experience-timeline">
-        {roles.map((role, index) => (
-          <motion.article
+        {roles.map((role) => (
+          <article
             className="experience-card"
             key={role.company}
-            initial={reduceMotion ? false : { opacity: 0, x: -14 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.18 }}
-            transition={{ duration: 0.45, delay: reduceMotion ? 0 : index * 0.08 }}
           >
             <div className="experience-card__marker" aria-hidden="true" />
             <div className="experience-card__heading">
@@ -61,7 +53,7 @@ const Experience = () => {
                 {role.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
               </ul>
             )}
-          </motion.article>
+          </article>
         ))}
       </div>
     </section>

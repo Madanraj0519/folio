@@ -1,35 +1,27 @@
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
 import { FaGraduationCap } from "react-icons/fa6";
 
 const About = () => {
-  const reduceMotion = useReducedMotion();
-
   return (
-    <motion.section
+    <section
       id="About"
       className="site-section about-section"
       aria-labelledby="about-title"
-      initial={reduceMotion ? false : { opacity: 0, y: 22 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.55 }}
     >
       <div className="section-heading">
-        <p className="eyebrow">A little about me</p>
-        <h2 id="about-title">Good software starts with understanding the problem.</h2>
+        <p className="eyebrow">About</p>
+        <h2 id="about-title">A bit about me</h2>
       </div>
       <div className="about-grid">
         <div className="about-copy">
           <p>
-            I&apos;m a software engineer with professional experience building full-stack
-            applications and CRM workflows. My work spans responsive React interfaces,
-            reusable APIs, authentication, and data-backed features using PostgreSQL and MongoDB.
+            I&apos;m a software engineer with experience building full-stack applications and CRM
+            features. I&apos;ve worked on React interfaces, REST APIs, authentication, and
+            applications backed by PostgreSQL and MongoDB.
           </p>
           <p>
-            I enjoy turning requirements into maintainable software: choosing clear boundaries,
-            writing reusable components and services, and working with teammates to deliver
-            features that feel straightforward to use.
+            I like working through a problem, understanding what the feature needs to do, and
+            building it in a way that is clear to use and maintain.
           </p>
           <a className="text-link" href="/#Experience">
             A closer look at my experience <span aria-hidden="true">↗</span>
@@ -45,7 +37,7 @@ const About = () => {
           </div>
         </aside>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
