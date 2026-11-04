@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
 import { FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
 
 const projects = [
@@ -101,7 +100,6 @@ const filters = ["All", "Freelance", "Full stack", "Frontend"];
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
-  const reduceMotion = useReducedMotion();
   const visibleProjects = activeFilter === "All"
     ? projects
     : projects.filter((project) => project.categories.includes(activeFilter));
@@ -109,7 +107,7 @@ const Projects = () => {
   return (
     <section id="Project" className="site-section projects-section" aria-labelledby="projects-title">
       <div className="section-heading">
-        <p className="eyebrow">Selected work</p>
+        <p className="eyebrow">Projects</p>
         <h2 id="projects-title">Projects</h2>
         <p className="section-description">
           A selection of personal and freelance work, from full-stack apps to front-end experiences.
@@ -134,14 +132,10 @@ const Projects = () => {
       </div>
 
       <div className="project-grid">
-        {visibleProjects.map((project, index) => (
-          <motion.article
+        {visibleProjects.map((project) => (
+          <article
             className="project-card"
             key={project.title}
-            initial={reduceMotion ? false : { opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.12 }}
-            transition={{ duration: 0.42, delay: reduceMotion ? 0 : (index % 3) * 0.06 }}
           >
             {project.image ? (
               <div className="project-image">
@@ -181,7 +175,7 @@ const Projects = () => {
                 </div>
               )}
             </div>
-          </motion.article>
+          </article>
         ))}
       </div>
     </section>

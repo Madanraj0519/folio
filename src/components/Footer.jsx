@@ -5,9 +5,9 @@ const Footer = () => (
   <footer id="Contact" className="site-footer">
     <div className="footer-main">
       <div>
-        <p className="eyebrow">Have a project in mind?</p>
-        <h2>Let&apos;s build something useful.</h2>
-        <p className="footer-copy">I&apos;m happy to talk about software engineering, product work, and new opportunities.</p>
+        <p className="eyebrow">Contact</p>
+        <h2>Get in touch</h2>
+        <p className="footer-copy">I&apos;m open to discussing software engineering roles and interesting projects.</p>
       </div>
       <a className="button button--primary footer-cta" href="mailto:madanraj0519@gmail.com">
         Get in touch <FaEnvelope aria-hidden="true" />

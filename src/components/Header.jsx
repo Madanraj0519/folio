@@ -20,7 +20,7 @@ const Header = () => {
     <header className="site-header">
       <div className="site-header__inner">
         <a className="brand-mark" href="/#Hero" onClick={closeMenu} aria-label="Madanraj, home">
-          M<span>.</span>
+          Madanraj<span>.</span>
         </a>
 
         <nav className={`site-nav${isMenuOpen ? " site-nav--open" : ""}`} aria-label="Main navigation">
